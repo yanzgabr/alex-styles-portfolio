@@ -5,26 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Alex Styles Portfolio</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Alex Styles</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Alex Styles</h1>
+            <nav>
+                <ul>
+                    <li><a href="#about">About Me</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
     <main>
-        <section id="about">
+        <section id="about" class="container">
             <h2>About Me</h2>
             <p>A brief introduction to Alex’s background and skills.</p>
         </section>
 
-        <section id="portfolio">
+        <section id="portfolio" class="container">
             <h2>Portfolio</h2>
             <div class="portfolio-grid">
                 <!-- Project thumbnails will go here -->
@@ -44,25 +47,24 @@
             </div>
         </section>
 
-        <section id="contact">
+        <section id="contact" class="container">
             <h2>Contact</h2>
-            <form action="#" method="post">
+            <form>
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
-
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
-
                 <label for="message">Message:</label>
                 <textarea id="message" name="message" required></textarea>
-
                 <button type="submit">Send</button>
             </form>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Alex Styles. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2025 Alex Styles. All rights reserved.</p>
+        </div>
     </footer>
 </body>
 </html>
