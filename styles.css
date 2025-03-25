@@ -1,65 +1,118 @@
+/* Base Styles */
 /* Typography */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Montserrat', sans-serif;
     line-height: 1.6;
     color: #333;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 h1, h2, h3 {
-    font-family: 'Georgia', serif;
+    font-family: 'Playfair Display', serif;
     color: #444;
 }
 
-/* Color Scheme */
-body {
-    background-color: #f4f4f4;
+h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
 }
 
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Container */
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Header */
 header {
     background-color: #333;
     color: #fff;
     padding: 1rem 0;
     text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav ul {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
 
 nav ul li {
     display: inline;
-    margin: 0 10px;
+    margin: 0 1rem;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
+nav ul li a:hover {
+    color: #ddd;
+}
+
+/* Sections */
 section {
-    padding: 2rem 0;
+    padding: 4rem 0;
 }
 
-/* Layout */
+#about p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+/* Portfolio */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
 }
 
 .project-thumbnail {
     background-color: #fff;
     padding: 1rem;
     border: 1px solid #ddd;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
 }
 
 .project-thumbnail img {
     max-width: 100%;
     height: auto;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 1rem;
 }
 
+.project-thumbnail h3 {
+    margin: 1rem 0;
+}
+
+.project-thumbnail:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Contact Form */
 form {
     display: flex;
     flex-direction: column;
@@ -71,30 +124,32 @@ form label {
 }
 
 form input, form textarea, form button {
-    padding: 0.5rem;
+    padding: 0.75rem;
     border: 1px solid #ccc;
+    border-radius: 5px;
 }
 
 form button {
     background-color: #333;
     color: #fff;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 form button:hover {
     background-color: #555;
 }
 
-/* Hover Transitions */
-nav ul li a:hover {
-    text-decoration: underline;
+/* Footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
 }
 
-.project-thumbnail:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Simple Animations */
+/* Animations */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -108,102 +163,60 @@ nav ul li a:hover {
     animation: fadeIn 1s ease-in;
 }
 
-/* Optimized CSS */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0.5rem 0;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    form {
+        gap: 0.5rem;
+    }
 }
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f4f4f4;
+@media (max-width: 1024px) {
+    h1 {
+        font-size: 2.75rem;
+    }
+    
+    h2 {
+        font-size: 2.25rem;
+    }
+    
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
 }
 
-header {
-    background-color: #333;
-    color: #fff;
-    padding: 1rem 0;
-    text-align: center;
-}
-
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline;
-    margin: 0 10px;
-}
-
-nav ul li a {
-    color: #fff;
-    text-decoration: none;
-    transition: text-decoration 0.3s ease;
-}
-
-nav ul li a:hover {
-    text-decoration: underline;
-}
-
-section {
-    padding: 2rem 0;
-}
-
-h1, h2, h3 {
-    font-family: 'Georgia', serif;
-    color: #444;
-}
-
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
-}
-
-.project-thumbnail {
-    background-color: #fff;
-    padding: 1rem;
-    border: 1px solid #ddd;
-    text-align: center;
-    animation: fadeIn 1s ease-in;
-    transition: box-shadow 0.3s ease;
-}
-
-.project-thumbnail:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.project-thumbnail img {
-    max-width: 100%;
-    height: auto;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-form label {
-    font-weight: bold;
-}
-
-form input, form textarea, form button {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-}
-
-form button {
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-form button:hover {
-    background-color: #555;
+@media (min-width: 1025px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
